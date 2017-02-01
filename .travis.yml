@@ -1,0 +1,23 @@
+sudo: false
+language: node_js
+env:
+  - NODE_ENV=test
+services: mongodb
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+
+before_install:
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export CXX=g++-4.8; fi
+  - mongo uptimetest --eval 'db.addUser("uptime", "password");'
+
+os:
+  - linux
+
+node_js:
+  - "7"
+  - "6"

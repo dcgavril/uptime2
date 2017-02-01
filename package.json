@@ -1,0 +1,31 @@
+{
+  "name": "node-uptime2",
+  "description": "Remote monitoring for HTTP applications",
+  "version": "0.0.1",
+  "author": "Ivan Kulikov",
+  "contributors": "Ivan Kulikov",
+  "dependencies": {
+    "express": "^4.14.1",
+    "sequelize": "^3.30.1"
+  },
+  "devDependencies": {
+    "mocha": "3.2.x",
+    "should": "3.3.1"
+  },
+  "keywords": [
+    "uptime2",
+    "monitoring",
+    "api",
+    "check"
+  ],
+  "repository": "https://github.com/uptime2/uptime2",
+  "license": "MIT",
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/mocha test/",
+    "start": "node app.js"
+  }
+}
