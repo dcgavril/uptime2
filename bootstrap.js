@@ -1,6 +1,10 @@
 var config     = require('config');
 var Sequelize = require("sequelize");
 
+var debug = require('debug')('bootstrap');
+
+
+
 var sequelize = null;
 
 if (config.has('database.connectionString')) {
@@ -18,11 +22,6 @@ if (config.has('database.connectionString')) {
         dialect: 'mysql'
     });
 }
-
-sequelize.authenticate().then(function(errors) {
-    console.error(errors);
-    process.exit(1);
-});
 
 module.exports.config = config;
 module.exports.db = sequelize;
