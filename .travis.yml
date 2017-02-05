@@ -1,7 +1,7 @@
 sudo: false
 language: node_js
 env:
-  - NODE_ENV=travis_mysql_test DB=mysql
+  - NODE_ENV=test DB=mysql
 services:
   - mysql
 
@@ -14,7 +14,10 @@ addons:
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export CXX=g++-4.8; fi
-  - mysql -e 'CREATE DATABASE myapp_test;'
+  - if [[ "$DB" == "mysql" ]]; then npm install mysql; fi
+  - if [[ "$DB" == "mysql" ]]; then cp config/database.yml.travis config/database.yml; fi
+  - if [[ "$DB" == "mysql" ]]; then mysql -e 'CREATE DATABASE uptime2tests CHARACTER SET utf8 COLLATE utf8_bin;'; fi
+  - if [[ "$DB" == "mysql" ]]; then cp test/config_files/local.test_mysql.yaml.travis config/local.test.json; fi
 
 os:
   - linux
