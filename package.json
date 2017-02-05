@@ -29,7 +29,6 @@
   },
   "scripts": {
     "test": "cross-env NODE_ENV=test node_modules/.bin/mocha test/unit",
-    "travis": "NODE_ENV=test node_modules/.bin/mocha test/unit",
     "start": "node app.js"
   }
 }

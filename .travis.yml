@@ -19,7 +19,7 @@ before_install:
   - if [[ "$DB" == "mysql" ]]; then mysql -e 'CREATE DATABASE uptime2tests CHARACTER SET utf8 COLLATE utf8_bin;'; fi
   
 script:
-  - npm travis
+  - npm test
 os:
   - linux
 
