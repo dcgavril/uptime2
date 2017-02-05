@@ -1,8 +1,9 @@
 sudo: false
 language: node_js
 env:
-  - NODE_ENV=test
-services: mongodb
+  - NODE_ENV=travis_mysql_test DB=mysql
+services:
+  - mysql
 
 addons:
   apt:
@@ -13,7 +14,7 @@ addons:
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export CXX=g++-4.8; fi
-  - mongo uptimetest --eval 'db.addUser("uptime", "password");'
+  - mysql -e 'CREATE DATABASE myapp_test;'
 
 os:
   - linux
