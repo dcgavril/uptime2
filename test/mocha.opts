@@ -1,0 +1,3 @@
+--ui bdd
+--reporter spec
+--slow 20ms
