@@ -13,7 +13,8 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "cross-env": "^3.1.4",
-    "mocha": "3.2.x"
+    "mocha": "3.2.x",
+    "sequelize-cli": "^2.5.1"
   },
   "keywords": [
     "uptime2",

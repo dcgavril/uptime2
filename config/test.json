@@ -1,8 +1,5 @@
 {
   "database": {
-    "dbname": "uptime2tests",
-	"dbusername":"uptime2tests",
-	"dbpassword":"TestUpTimPassword",
-	"dbhost":"127.0.0.1"
+    "database": "uptime2_tests"
   }
 }

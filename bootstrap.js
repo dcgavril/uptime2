@@ -3,27 +3,20 @@ var Sequelize = require("sequelize");
 
 var debug = require('debug')('bootstrap');
 
-
-
-var sequelize = null;
-
 if (config.has('database.connectionString')) {
 	var connectionString = config.get('database.connectionString');
-    sequelize = new Sequelize(connectionString);
+    var db = new Sequelize(connectionString);
 } else {
-	var dbName = config.get('database.dbname');
+	var dbName = config.get('database.database');
 	var dbUsername = config.get('database.dbusername');
-	var dbPassword = config.get('database.dbpassword');
-	var dbHost = config.get('database.dbhost');
-	
-    sequelize = new Sequelize(dbName, dbUsername, dbPassword, {
+	var dbPassword = config.get('database.password');
+	var dbHost = config.get('database.host');
+  var dbDialect = config.get('database.dialect');
+  var db = new Sequelize(dbName, dbUsername, dbPassword, {
         host:  dbHost,
-		// mysql now
-        dialect: 'mysql'
+        dialect: dbDialect
     });
 }
 
 module.exports.config = config;
-module.exports.db = sequelize;
-
-
+module.exports.db = db;

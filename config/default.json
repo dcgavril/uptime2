@@ -1,8 +1,9 @@
 {
   "database": {
-    "dbname": "uptime2",
-	"dbusername":"root",
-	"dbpassword":"",
-	"dbhost":"127.0.0.1"
+     "username": "root",
+	   "password":"",
+	   "database":"uptime2",
+	   "host":"127.0.0.1",
+	   "dialect": "mysql"
   }
 }
