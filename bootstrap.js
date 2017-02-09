@@ -1,8 +1,6 @@
 var config     = require('config');
 var Sequelize = require("sequelize");
 
-var debug = require('debug')('bootstrap');
-
 if (config.has('database.connectionString')) {
 	var connectionString = config.get('database.connectionString');
     var db = new Sequelize(connectionString);
